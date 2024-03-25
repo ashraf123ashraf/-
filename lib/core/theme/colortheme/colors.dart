@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class Appcolors {
   static Color main = Color(0xffF96161);
+  static Color second = Color(0xffFDD7D7);
   static Color text = Color(0xff2A2A2A);
   static Color cards = Color(0xffFFFFFF);
   static Color shadows = Color(0xff4040400D);
