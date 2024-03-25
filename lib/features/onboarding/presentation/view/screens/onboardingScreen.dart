@@ -1,3 +1,5 @@
+import 'package:easy_localization/easy_localization.dart';
+import 'package:fehres/core/strings/localKeys.dart';
 import 'package:fehres/core/utils/extenstions.dart';
 import 'package:fehres/core/widgets/my_customtext.dart';
 import 'package:fehres/features/onboarding/presentation/view/widgets/arrow_forword.dart';
@@ -19,13 +21,39 @@ class OnboardingScreen extends StatelessWidget {
             reverse: true,
             physics: AlwaysScrollableScrollPhysics(),
             children: [
-              Image.asset('onbo1'.imagepath),
-              Image.asset('onbo2'.imagepath),
-              Image.asset('onbo3'.imagepath),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset('onbo1'.imagepath),
+                  MyTexT(
+                    text: LocaleKeys.onboaarding_bo1.tr(),
+                    textAlign: TextAlign.center,
+                  ),
+                ],
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset('onbo2'.imagepath),
+                  MyTexT(
+                    text: LocaleKeys.onboaarding_bo2.tr(),
+                    textAlign: TextAlign.center,
+                  ),
+                ],
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset('onbo3'.imagepath),
+                  MyTexT(
+                    text: LocaleKeys.onboaarding_bo3.tr(),
+                    textAlign: TextAlign.center,
+                  ),
+                ],
+              ),
             ],
           ),
         ),
-        MyTexT(text: ''),
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [

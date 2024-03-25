@@ -32,6 +32,7 @@ class MyTexT extends StatelessWidget {
   const MyTexT(
       {super.key,
       required this.text,
+      this.textAlign,
       this.color,
       this.fontWeight,
       this.fontsize,
@@ -53,8 +54,10 @@ class MyTexT extends StatelessWidget {
   final Texttype? type;
   final double? wordspacing;
   final double? letterspacing;
+  final TextAlign? textAlign;
   @override
   Widget build(BuildContext context) {
-    return Text(text, style: textStyle ?? gettextstyle(type));
+    return Text(
+        textAlign: textAlign, text, style: textStyle ?? gettextstyle(type));
   }
 }
