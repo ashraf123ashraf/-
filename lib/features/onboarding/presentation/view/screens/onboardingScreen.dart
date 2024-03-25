@@ -1,4 +1,5 @@
 import 'package:fehres/core/utils/extenstions.dart';
+import 'package:fehres/core/widgets/my_customtext.dart';
 import 'package:fehres/features/onboarding/presentation/view/widgets/arrow_forword.dart';
 import 'package:fehres/features/onboarding/presentation/view/widgets/dots.dart';
 import 'package:flutter/material.dart';
@@ -24,6 +25,7 @@ class OnboardingScreen extends StatelessWidget {
             ],
           ),
         ),
+        MyTexT(text: ''),
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
