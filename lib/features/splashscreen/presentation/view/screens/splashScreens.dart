@@ -22,12 +22,9 @@ class SplashScreen extends StatelessWidget {
           ),
         );
       },
-      onEnd: () => Future.delayed(
-        Duration(seconds: 1),
-        () => namedRoute(
-          context,
-          RoutesName.onboarding,
-        ),
+      onEnd: () => namedRoute(
+        context,
+        RoutesName.onboarding,
       ),
     );
   }

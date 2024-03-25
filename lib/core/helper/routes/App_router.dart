@@ -22,6 +22,7 @@ class AppRoute {
         );
       case RoutesName.homeScreen:
         return materialpage(
+          direction: AxisDirection.up,
           HomeScreen(),
         );
     }
