@@ -8,6 +8,7 @@ class Appcolors {
   static Color shadows = Color(0xff4040400D);
   static Color dialog = Color(0xff7C7C7C);
   static Color border = Color(0xffE7E7E7);
+  static Color Black = Color(0xff2A2A2A);
   static LinearGradient circularProgress = LinearGradient(
     colors: [
       Color.fromARGB(249, 97, 97, 1),

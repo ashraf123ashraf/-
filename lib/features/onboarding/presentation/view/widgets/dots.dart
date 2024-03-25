@@ -4,17 +4,26 @@ import 'package:flutter/widgets.dart';
 
 class Dots extends StatelessWidget {
   const Dots({super.key, required this.index, required this.isActive});
-  final bool isActive;
+  final bool? isActive;
   final int index;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 15,
-      height: 15,
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        color: Appcolors.second,
-      ),
-    );
+    return isActive ?? false
+        ? Container(
+            width: 20,
+            height: 10,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              color: Appcolors.main,
+            ),
+          )
+        : Container(
+            width: 10,
+            height: 10,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: Appcolors.second,
+            ),
+          );
   }
 }
