@@ -7,3 +7,5 @@ MaterialPageRoute materialpage(Widget screenName) {
 void namedRoute(BuildContext context, String routename) {
   Navigator.pushNamed(context, routename);
 }
+
+routeTransition(BuildContext context) {}

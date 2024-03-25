@@ -5,6 +5,7 @@ abstract class LocaleKeys {
   static const onboaarding_bo2 = 'onboarding.onbo2';
   static const onboaarding_bo3 = 'onboarding.onbo3';
   static const onboaarding_skip = 'onboarding.skip';
+  static const onboaarding_start = 'onboarding.start';
 
   // static const auth_welcome = 'auth.welcome';
   // static const auth_login_account = 'auth.login_account';

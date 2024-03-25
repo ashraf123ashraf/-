@@ -20,6 +20,10 @@ class AppRoute {
         return materialpage(
           OnboardingScreen(),
         );
+      case RoutesName.homeScreen:
+        return materialpage(
+          HomeScreen(),
+        );
     }
 
     return null;

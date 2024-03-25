@@ -51,6 +51,7 @@ class MyApp extends StatelessWidget {
             title: "فهرس",
             navigatorKey: Utils.navigatorKey,
             theme: AppTheme.theme,
+            themeAnimationCurve: Curves.easeInOutCubic,
             locale: context.locale,
             localizationsDelegates: context.localizationDelegates,
             supportedLocales: context.supportedLocales,

@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class Dots extends StatelessWidget {
-  const Dots({super.key, required this.index, required this.isActive});
+  const Dots(
+      {super.key, required this.index, required this.isActive, this.ontap});
   final bool? isActive;
   final int index;
+  final VoidCallback? ontap;
   @override
   Widget build(BuildContext context) {
     return isActive ?? false
@@ -17,12 +19,15 @@ class Dots extends StatelessWidget {
               color: Appcolors.main,
             ),
           )
-        : Container(
-            width: 10,
-            height: 10,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: Appcolors.second,
+        : GestureDetector(
+            onTap: ontap,
+            child: Container(
+              width: 10,
+              height: 10,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: Appcolors.second,
+              ),
             ),
           );
   }

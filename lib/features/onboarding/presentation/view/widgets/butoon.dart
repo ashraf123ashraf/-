@@ -3,22 +3,22 @@ import 'package:fehres/core/widgets/my_customtext.dart';
 import 'package:flutter/material.dart';
 
 class OnboaButton extends StatelessWidget {
-  const OnboaButton({super.key, required this.title});
+  const OnboaButton({super.key, required this.title, this.ontap});
   final String title;
-
+  final VoidCallback? ontap;
   @override
   Widget build(BuildContext context) {
     return Align(
       child: TextButton(
         style: ButtonStyle(
-          backgroundColor: MaterialStatePropertyAll(Appcolors.cards),
+          backgroundColor: MaterialStatePropertyAll(Appcolors.white),
           elevation: MaterialStatePropertyAll(1),
         ),
         child: MyTexT(
           text: title,
           color: Appcolors.Black,
         ),
-        onPressed: () {},
+        onPressed: ontap,
       ),
       alignment: Alignment.topLeft,
     );
