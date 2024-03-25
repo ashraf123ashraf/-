@@ -3,6 +3,7 @@ import 'package:fehres/core/helper/general_cubbits/cubit/lanng_cubit.dart';
 import 'package:fehres/core/helper/routes/App_router.dart';
 import 'package:fehres/core/helper/routes/routesname.dart';
 import 'package:fehres/core/theme/apptheme/app_theme.dart';
+import 'package:fehres/core/utils/config.dart';
 import 'package:fehres/core/utils/locator.dart' as di;
 import 'package:fehres/core/utils/utils.dart';
 import 'package:flutter/material.dart';
@@ -45,6 +46,7 @@ class MyApp extends StatelessWidget {
           Utils.lang = context.locale.languageCode;
           Utils.rebuildAllchildren(context);
           return MaterialApp(
+            scrollBehavior: MyScrollbeha(),
             debugShowCheckedModeBanner: false,
             title: "فهرس",
             navigatorKey: Utils.navigatorKey,

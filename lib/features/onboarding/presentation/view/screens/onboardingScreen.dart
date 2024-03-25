@@ -7,11 +7,17 @@ class OnboardingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: PageView(
+        body: Column(
       children: [
-        Image.asset('onboarding1'.imagepath),
-        Image.asset('onboarding2'.imagepath),
-        Image.asset('onboarding3'.imagepath),
+        PageView(
+          reverse: true,
+          physics: AlwaysScrollableScrollPhysics(),
+          children: [
+            Image.asset('onbo1'.imagepath),
+            Image.asset('onbo2'.imagepath),
+            Image.asset('onbo3'.imagepath),
+          ],
+        ),
       ],
     ));
   }
