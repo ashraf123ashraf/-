@@ -1,7 +1,11 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:fehres/core/strings/localKeys.dart';
 import 'package:fehres/core/utils/extenstions.dart';
-import 'package:fehres/features/home/presentation/view/widgets/slider.button.dart';
-import 'package:fehres/features/home/presentation/view/widgets/slider_item.dart';
+import 'package:fehres/features/home/presentation/view/widgets/Addrecently/bookrecent_item.dart';
+import 'package:fehres/features/home/presentation/view/widgets/Addrecently/textbar.dart';
+import 'package:fehres/features/home/presentation/view/widgets/sliderWidgets/slider.button.dart';
+import 'package:fehres/features/home/presentation/view/widgets/sliderWidgets/slider_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -36,26 +40,27 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: Container(
         width: double.infinity,
-        child: Column(
+        child: ListView(
           children: [
             CarouselSlider(
               items: [
                 SliderItem(
                   index: slideIndex,
                   img: 'slide1',
-                  title: 'بمناسبة معرض\nالكتاب',
-                  title2: 'استمتع بعرض علي\nجميع الكتب',
+                  title: LocaleKeys.home_slider1title.tr(),
+                  title2: LocaleKeys.home_slidertitle2.tr(),
                 ),
                 SliderItem(
                   index: slideIndex,
                   subchild: SliderButton(
-                    title: 'انضم الان',
+                    title: LocaleKeys.home_slider2button.tr(),
                   ),
                   img: 'slide2',
-                  title: 'الان يمكنك نشر\nكتابك معنا',
+                  title: LocaleKeys.home_slider2title.tr(),
                 ),
               ],
               options: CarouselOptions(
+                aspectRatio: 16 / 7,
                 onPageChanged: (value, reason) {
                   slideIndex = value;
 
@@ -64,9 +69,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 autoPlay: true,
               ),
             ),
+            TextBar(),
+            BookRecentItem(),
           ],
         ),
-      ),
+      ).padh(20),
     );
   }
 }

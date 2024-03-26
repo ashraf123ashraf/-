@@ -1,7 +1,7 @@
 import 'package:fehres/core/theme/colortheme/colors.dart';
 import 'package:fehres/core/utils/extenstions.dart';
 import 'package:fehres/core/widgets/my_customtext.dart';
-import 'package:fehres/features/home/presentation/view/widgets/dot.dart';
+import 'package:fehres/features/home/presentation/view/widgets/sliderWidgets/dot.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';

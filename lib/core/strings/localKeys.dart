@@ -6,6 +6,14 @@ abstract class LocaleKeys {
   static const onboaarding_bo3 = 'onboarding.onbo3';
   static const onboaarding_skip = 'onboarding.skip';
   static const onboaarding_start = 'onboarding.start';
+  static const home_slider1title = 'home.slider1title';
+  static const home_slidertitle2 = 'home.slider1Tit2';
+  static const home_slider2title = 'home.slider2title';
+  static const home_slider2button = 'home.slider2button';
+  static const home_bookname = "home.bookName";
+  static const home_autherName = "home.autherName";
+  static const home_addrecent = "home.addRecent";
+  static const home_more = "home.more";
 
   // static const auth_welcome = 'auth.welcome';
   // static const auth_login_account = 'auth.login_account';

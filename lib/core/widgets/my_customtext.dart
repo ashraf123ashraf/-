@@ -1,3 +1,4 @@
+import 'package:fehres/core/theme/colortheme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -7,10 +8,20 @@ class MyTexT extends StatelessWidget {
   TextStyle? gettextstyle(Texttype? type) {
     switch (type) {
       case Texttype.title:
-        return TextStyle().copyWith();
+        return TextStyle(
+          color: Appcolors.Black,
+          fontWeight: FontWeight.w500,
+        ).copyWith(
+          overflow: overflow ?? TextOverflow.ellipsis,
+          fontSize: fontsize ?? 16,
+          height: height ?? 1.4,
+        );
 
       case Texttype.normal:
-        return TextStyle().copyWith();
+        return TextStyle(color: Appcolors.grey).copyWith(
+          fontSize: fontsize ?? 13,
+          fontWeight: fontWeight ?? FontWeight.w500,
+        );
       case Texttype.err:
         return TextStyle().copyWith();
       case Texttype.text:
