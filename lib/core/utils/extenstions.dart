@@ -22,6 +22,22 @@ extension pad on Widget {
         child: this,
         padding: EdgeInsets.symmetric(vertical: value),
       );
+  Padding padr(double value) => Padding(
+        child: this,
+        padding: EdgeInsets.only(right: value),
+      );
+  Padding padl(double value) => Padding(
+        child: this,
+        padding: EdgeInsets.only(left: value),
+      );
+  Padding padt(double value) => Padding(
+        child: this,
+        padding: EdgeInsets.only(top: value),
+      );
+  Padding padb(double value) => Padding(
+        child: this,
+        padding: EdgeInsets.only(bottom: value),
+      );
 }
 
 extension space on double {
