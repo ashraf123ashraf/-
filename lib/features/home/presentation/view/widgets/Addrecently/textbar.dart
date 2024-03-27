@@ -6,15 +6,17 @@ import 'package:fehres/core/widgets/my_customtext.dart';
 import 'package:flutter/material.dart';
 
 class TextBar extends StatelessWidget {
-  const TextBar({super.key, this.ontap});
+  const TextBar({super.key, this.ontap, this.title});
   final VoidCallback? ontap;
+  final String? title;
+
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         MyTexT(
-          text: LocaleKeys.home_addrecent.tr(),
+          text: title ?? LocaleKeys.home_addrecent.tr(),
           type: Texttype.title,
           fontsize: 16,
         ),

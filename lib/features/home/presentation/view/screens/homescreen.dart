@@ -1,7 +1,9 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:fehres/core/strings/localKeys.dart';
+import 'package:fehres/core/theme/colortheme/colors.dart';
 import 'package:fehres/core/utils/extenstions.dart';
+import 'package:fehres/features/home/presentation/view/widgets/Addrecently/auther_item.dart';
 import 'package:fehres/features/home/presentation/view/widgets/Addrecently/bookrecent_item.dart';
 import 'package:fehres/features/home/presentation/view/widgets/Addrecently/textbar.dart';
 import 'package:fehres/features/home/presentation/view/widgets/sliderWidgets/slider.button.dart';
@@ -22,6 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Appcolors.white,
         title: SvgPicture.asset('logo'.svgPath),
         actions: [
           IconButton(
@@ -41,6 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Container(
         width: double.infinity,
         child: ListView(
+          padding: EdgeInsets.all(12),
           children: [
             CarouselSlider(
               items: [
@@ -60,7 +64,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ],
               options: CarouselOptions(
-                aspectRatio: 16 / 7,
+                enlargeCenterPage: true,
+                enlargeStrategy: CenterPageEnlargeStrategy.zoom,
+                aspectRatio: 16 / 9,
+                viewportFraction: 1,
                 onPageChanged: (value, reason) {
                   slideIndex = value;
 
@@ -69,11 +76,62 @@ class _HomeScreenState extends State<HomeScreen> {
                 autoPlay: true,
               ),
             ),
+            15.0.spacev,
             TextBar(),
-            BookRecentItem(),
+            12.0.spacev,
+            Container(
+              height: 261,
+              child: ListView.builder(
+                shrinkWrap: true,
+                scrollDirection: Axis.horizontal,
+                itemCount: 8,
+                itemBuilder: (context, index) => Row(
+                  children: [
+                    BookRecentItem(),
+                    15.0.spaceh,
+                  ],
+                ),
+              ),
+            ),
+            TextBar(
+              title: "الاكثر شهرة",
+            ),
+            12.0.spacev,
+            Container(
+              height: 261,
+              child: ListView.builder(
+                shrinkWrap: true,
+                scrollDirection: Axis.horizontal,
+                itemCount: 8,
+                itemBuilder: (context, index) => Row(
+                  children: [
+                    BookRecentItem(),
+                    15.0.spaceh,
+                  ],
+                ),
+              ),
+            ),
+            15.0.spacev,
+            TextBar(),
+            12.0.spacev,
+            Container(
+              height: 200,
+              child: ListView.builder(
+                shrinkWrap: true,
+                scrollDirection: Axis.horizontal,
+                itemCount: 8,
+                itemBuilder: (context, index) => Row(
+                  children: [
+                    AuthorItem(),
+                    15.0.spaceh,
+                  ],
+                ),
+              ),
+            ),
+            12.0.spacev
           ],
         ),
-      ).padh(20),
+      ),
     );
   }
 }

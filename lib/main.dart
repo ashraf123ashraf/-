@@ -44,7 +44,7 @@ class MyApp extends StatelessWidget {
         ],
         child: BlocBuilder<LanngCubit, LanngState>(builder: (context, state) {
           Utils.lang = context.locale.languageCode;
-          // Utils.rebuildAllchildren(context);
+          Utils.rebuildAllchildren(context);
           return MaterialApp(
             scrollBehavior: MyScrollbeha(),
             debugShowCheckedModeBanner: false,

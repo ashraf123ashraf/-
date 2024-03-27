@@ -28,7 +28,7 @@ class SliderItem extends StatelessWidget {
         alignment: Alignment.topCenter,
         children: [
           Container(
-            width: 343,
+            width: double.infinity,
             height: 182,
             decoration: BoxDecoration(
                 color: Appcolors.main, borderRadius: BorderRadius.circular(8)),
