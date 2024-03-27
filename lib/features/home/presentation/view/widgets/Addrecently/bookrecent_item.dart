@@ -1,10 +1,9 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:fehres/core/strings/localKeys.dart';
-import 'package:fehres/core/theme/colortheme/colors.dart';
 import 'package:fehres/core/utils/extenstions.dart';
 import 'package:fehres/core/widgets/my_customtext.dart';
+import 'package:fehres/features/home/presentation/view/widgets/Addrecently/rating_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class BookRecentItem extends StatelessWidget {
   const BookRecentItem(
@@ -46,16 +45,9 @@ class BookRecentItem extends StatelessWidget {
             type: Texttype.normal,
             fontsize: 13,
           ),
-          RatingBarIndicator(
-            rating: ratingVal ?? 1,
-            itemSize: 21.86,
-            direction: Axis.horizontal,
-            itemCount: 5,
-            itemBuilder: (context, _) => Icon(
-              Icons.star,
-              color: Appcolors.main,
-            ),
-          )
+          MyRating(
+            ratingVal: ratingVal,
+          ),
         ],
       ),
     );

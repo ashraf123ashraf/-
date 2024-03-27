@@ -6,8 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class ShuffleWidget extends StatelessWidget {
-  const ShuffleWidget({super.key});
-
+  const ShuffleWidget({super.key, this.gridTab, this.listTab});
+  final VoidCallback? gridTab;
+  final VoidCallback? listTab;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -28,12 +29,12 @@ class ShuffleWidget extends StatelessWidget {
           children: [
             IconButton(
               padding: EdgeInsets.zero,
-              onPressed: () {},
+              onPressed: gridTab,
               icon: SvgPicture.asset('gridview'.svgPath),
             ),
             IconButton(
               padding: EdgeInsets.zero,
-              onPressed: () {},
+              onPressed: listTab,
               icon: SvgPicture.asset(
                 'listview'.svgPath,
                 // color: Appcolors.grey,

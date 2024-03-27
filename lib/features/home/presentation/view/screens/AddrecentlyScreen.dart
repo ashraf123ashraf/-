@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:fehres/core/strings/localKeys.dart';
 import 'package:fehres/core/utils/extenstions.dart';
 import 'package:fehres/features/home/presentation/view/widgets/Addrecently/ShuffleWidget.dart';
+import 'package:fehres/features/home/presentation/view/widgets/Addrecently/view_as_list.dart';
 import 'package:fehres/features/home/presentation/view/widgets/appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -29,7 +30,13 @@ class AddRecentscreen extends StatelessWidget {
       ),
       body: Column(
         children: [
-          ShuffleWidget(),
+          ShuffleWidget(
+            gridTab: () {},
+            listTab: () {},
+          ),
+          Expanded(
+            child: ViewASList(),
+          ),
         ],
       ).padh(12),
     );

@@ -25,7 +25,10 @@ class MyTexT extends StatelessWidget {
       case Texttype.err:
         return TextStyle().copyWith();
       case Texttype.text:
-        return TextStyle().copyWith();
+        return TextStyle(fontWeight: FontWeight.w400, color: Appcolors.grey)
+            .copyWith(
+          fontSize: fontsize ?? 12,
+        );
       default:
         return TextStyle(
           fontSize: fontsize,
@@ -53,7 +56,8 @@ class MyTexT extends StatelessWidget {
       this.overflow,
       this.type,
       this.letterspacing,
-      this.wordspacing});
+      this.wordspacing,
+      this.maxlines});
   final String text;
   final Color? color;
   final double? fontsize;
@@ -66,9 +70,13 @@ class MyTexT extends StatelessWidget {
   final double? wordspacing;
   final double? letterspacing;
   final TextAlign? textAlign;
+  final int? maxlines;
   @override
   Widget build(BuildContext context) {
     return Text(
-        textAlign: textAlign, text, style: textStyle ?? gettextstyle(type));
+        maxLines: maxlines,
+        textAlign: textAlign,
+        text,
+        style: textStyle ?? gettextstyle(type));
   }
 }
