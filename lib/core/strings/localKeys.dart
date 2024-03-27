@@ -14,6 +14,7 @@ abstract class LocaleKeys {
   static const home_autherName = "home.autherName";
   static const home_addrecent = "home.addRecent";
   static const home_more = "home.more";
+  static const addrecent_subtitle = 'home.subtitle';
 
   // static const auth_welcome = 'auth.welcome';
   // static const auth_login_account = 'auth.login_account';

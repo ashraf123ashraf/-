@@ -1,5 +1,6 @@
 import 'package:fehres/core/helper/navigation_func.dart';
 import 'package:fehres/core/helper/routes/routesname.dart';
+import 'package:fehres/features/home/presentation/view/screens/AddrecentlyScreen.dart';
 import 'package:fehres/features/home/presentation/view/screens/homescreen.dart';
 import 'package:fehres/features/onboarding/presentation/view/screens/onboardingScreen.dart';
 import 'package:fehres/features/splashscreen/presentation/view/screens/splashScreens.dart';
@@ -25,6 +26,8 @@ class AppRoute {
           direction: AxisDirection.up,
           HomeScreen(),
         );
+      case RoutesName.addRecentlyScreen:
+        return materialpage(AddRecentscreen(), direction: AxisDirection.left);
     }
 
     return null;

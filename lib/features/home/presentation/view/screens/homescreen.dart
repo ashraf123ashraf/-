@@ -1,5 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:fehres/core/helper/navigation_func.dart';
+import 'package:fehres/core/helper/routes/routesname.dart';
 import 'package:fehres/core/strings/localKeys.dart';
 import 'package:fehres/core/theme/colortheme/colors.dart';
 import 'package:fehres/core/utils/extenstions.dart';
@@ -77,7 +79,9 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             15.0.spacev,
-            TextBar(),
+            TextBar(
+              ontap: () => namedRoute(context, RoutesName.addRecentlyScreen),
+            ),
             12.0.spacev,
             Container(
               height: 261,

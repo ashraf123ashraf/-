@@ -14,6 +14,9 @@
         "bookName" :" ذكر شرقي منقرض",
         "autherName" : "محمد طه",
         "more":"المزيد",
-        "addRecent" : "اضيف حديثا"
+        "addRecent" : "اضيف حديثا",
+        "subtitle" : "يتم عرض 50 كتاب"
+        
+
     }
 }
