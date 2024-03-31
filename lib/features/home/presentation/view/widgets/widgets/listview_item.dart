@@ -1,13 +1,23 @@
 import 'package:fehres/core/theme/colortheme/colors.dart';
 import 'package:fehres/core/utils/extenstions.dart';
 import 'package:fehres/core/widgets/my_customtext.dart';
-import 'package:fehres/features/home/presentation/view/widgets/Addrecently/rating_widget.dart';
+import 'package:fehres/features/home/presentation/view/widgets/widgets/rating_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class ListItem extends StatelessWidget {
-  const ListItem({super.key});
-
+  const ListItem(
+      {super.key,
+      this.authorName,
+      this.bookname,
+      this.img,
+      this.ratioval,
+      this.text});
+  final String? img;
+  final String? bookname;
+  final String? authorName;
+  final double? ratioval;
+  final String? text;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -25,9 +35,9 @@ class ListItem extends StatelessWidget {
             children: [
               Expanded(
                 flex: 4,
-                child: Image.asset(
-                  'book'.imagepath,
-                ),
+                child: img == null
+                    ? Image.asset('book'.imagepath)
+                    : Image.asset(''),
               ),
               8.0.spaceh,
               Expanded(
@@ -39,7 +49,7 @@ class ListItem extends StatelessWidget {
                     Row(
                       children: [
                         MyTexT(
-                          text: 'ذكر شرقي منقرض',
+                          text: bookname ?? 'ذكر شرقي منقرض',
                           type: Texttype.title,
                         ),
                         8.0.spaceh,
@@ -51,7 +61,7 @@ class ListItem extends StatelessWidget {
                     ),
                     MyTexT(
                       maxlines: 9,
-                      text:
+                      text: text ??
                           'كل شئ في عالم اليوم يحمل في باطنه ما يحملنا على الشك والإيمان في ذا .....',
                       type: Texttype.text,
                       overflow: TextOverflow.ellipsis,
@@ -67,13 +77,15 @@ class ListItem extends StatelessWidget {
                         MyTexT(
                           fontsize: 13,
                           fontWeight: FontWeight.w500,
-                          text: ' محمد طه ',
+                          text: authorName ?? ' محمد طه ',
                           type: Texttype.text,
                         ),
                       ],
                     ),
                     8.0.spacev,
-                    MyRating(),
+                    MyRating(
+                      ratingVal: ratioval,
+                    ),
                     8.0.spacev,
                   ],
                 ),

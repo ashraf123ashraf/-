@@ -14,6 +14,7 @@ class _MyspinnerState extends State<Myspinner>
 
   @override
   void initState() {
+    super.initState();
     _animationController = AnimationController(
         vsync: this,
         duration: Duration(

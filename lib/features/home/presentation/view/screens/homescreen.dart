@@ -5,11 +5,11 @@ import 'package:fehres/core/helper/routes/routesname.dart';
 import 'package:fehres/core/strings/localKeys.dart';
 import 'package:fehres/core/theme/colortheme/colors.dart';
 import 'package:fehres/core/utils/extenstions.dart';
-import 'package:fehres/features/home/presentation/view/widgets/Addrecently/auther_item.dart';
-import 'package:fehres/features/home/presentation/view/widgets/Addrecently/bookrecent_item.dart';
-import 'package:fehres/features/home/presentation/view/widgets/Addrecently/textbar.dart';
 import 'package:fehres/features/home/presentation/view/widgets/sliderWidgets/slider.button.dart';
 import 'package:fehres/features/home/presentation/view/widgets/sliderWidgets/slider_item.dart';
+import 'package:fehres/features/home/presentation/view/widgets/widgets/auther_item.dart';
+import 'package:fehres/features/home/presentation/view/widgets/widgets/bookrecent_item.dart';
+import 'package:fehres/features/home/presentation/view/widgets/widgets/textbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -30,13 +30,17 @@ class _HomeScreenState extends State<HomeScreen> {
         title: SvgPicture.asset('logo'.svgPath),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              namedRoute(context, RoutesName.searchScreen);
+            },
             icon: SvgPicture.asset(
               'search'.svgPath,
             ),
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              namedRoute(context, RoutesName.notifyScreen);
+            },
             icon: SvgPicture.asset(
               'notify'.svgPath,
             ),
@@ -116,7 +120,10 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             15.0.spacev,
-            TextBar(),
+            TextBar(
+              title: "اشهر المؤلفون",
+              ontap: () => namedRoute(context, RoutesName.authorscreen),
+            ),
             12.0.spacev,
             Container(
               height: 200,

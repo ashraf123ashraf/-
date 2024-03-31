@@ -2,7 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:fehres/core/strings/localKeys.dart';
 import 'package:fehres/core/utils/extenstions.dart';
 import 'package:fehres/core/widgets/my_customtext.dart';
-import 'package:fehres/features/home/presentation/view/widgets/Addrecently/rating_widget.dart';
+import 'package:fehres/features/home/presentation/view/widgets/widgets/rating_widget.dart';
 import 'package:flutter/material.dart';
 
 class BookRecentItem extends StatelessWidget {
