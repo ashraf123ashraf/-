@@ -49,7 +49,7 @@ class MyApp extends StatelessWidget {
             scrollBehavior: MyScrollbeha(),
             debugShowCheckedModeBanner: false,
             title: "فهرس",
-            // navigatorKey: Utils.navigatorKey,
+            navigatorKey: Utils.navigatorKey,
             theme: AppTheme.theme,
             themeAnimationCurve: Curves.easeInOutCubic,
             locale: context.locale,

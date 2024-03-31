@@ -7,9 +7,9 @@ extension photo on String {
 }
 
 extension dateformatt on String {
-  formatdate() {
+  String formatdate() {
     DateTime dateTime = DateTime.parse(this);
-    return DateFormat.yMd().format(dateTime);
+    return DateFormat.yMd('en').format(dateTime);
   }
 }
 
