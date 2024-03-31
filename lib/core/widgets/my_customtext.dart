@@ -25,8 +25,10 @@ class MyTexT extends StatelessWidget {
       case Texttype.err:
         return TextStyle().copyWith();
       case Texttype.text:
-        return TextStyle(fontWeight: FontWeight.w400, color: Appcolors.grey)
-            .copyWith(
+        return TextStyle(
+          fontWeight: FontWeight.w400,
+        ).copyWith(
+          color: color ?? Appcolors.grey,
           fontSize: fontsize ?? 12,
         );
       default:
