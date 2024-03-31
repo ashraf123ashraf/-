@@ -8,4 +8,5 @@ class RoutesName {
   static const searchScreen = 'searchScreen';
   static const notifyScreen = 'notifyScreen';
   static const mostpopularScreen = 'mostpopulatScreen';
+  static const authorDetailsScreen = "AuthorDetailsScreen";
 }

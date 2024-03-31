@@ -1,6 +1,7 @@
 import 'package:fehres/core/helper/navigation_func.dart';
 import 'package:fehres/core/helper/routes/routesname.dart';
 import 'package:fehres/features/authors/presentation/view/screens/AuthorScreen.dart';
+import 'package:fehres/features/authors/presentation/view/screens/author_detailsScreen.dart';
 import 'package:fehres/features/home/presentation/view/screens/homescreen.dart';
 import 'package:fehres/features/home/presentation/view/screens/notify_screen.dart';
 import 'package:fehres/features/home/presentation/view/screens/search_screen.dart';
@@ -48,6 +49,11 @@ class AppRoute {
         return materialpage(
           SearchScreen(),
           direction: AxisDirection.down,
+        );
+      case RoutesName.authorDetailsScreen:
+        return materialpage(
+          AuthorDetailsScreen(),
+          direction: AxisDirection.right,
         );
     }
 
