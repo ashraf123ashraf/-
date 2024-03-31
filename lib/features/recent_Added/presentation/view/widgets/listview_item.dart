@@ -1,7 +1,7 @@
 import 'package:fehres/core/theme/colortheme/colors.dart';
 import 'package:fehres/core/utils/extenstions.dart';
 import 'package:fehres/core/widgets/my_customtext.dart';
-import 'package:fehres/features/home/presentation/view/widgets/widgets/rating_widget.dart';
+import 'package:fehres/core/widgets/rating_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 

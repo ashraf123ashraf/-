@@ -1,4 +1,4 @@
-import 'package:fehres/features/home/presentation/view/widgets/widgets/gridItem.dart';
+import 'package:fehres/features/recent_Added/presentation/view/widgets/gridItem.dart';
 import 'package:flutter/material.dart';
 
 class ViewAsgrid extends StatelessWidget {

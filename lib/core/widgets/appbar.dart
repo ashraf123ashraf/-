@@ -1,3 +1,4 @@
+import 'package:fehres/core/theme/colortheme/colors.dart';
 import 'package:fehres/core/widgets/my_customtext.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +16,10 @@ AppBar homeAppbar(
       type: Texttype.title,
     ),
     leading: IconButton(
-      icon: Icon(iconData),
+      icon: Icon(
+        color: Appcolors.Black,
+        iconData,
+      ),
       onPressed: onTap,
     ),
     actions: isThereAction ?? false ? actions : null,

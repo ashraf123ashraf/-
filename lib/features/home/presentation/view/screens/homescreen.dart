@@ -5,12 +5,15 @@ import 'package:fehres/core/helper/routes/routesname.dart';
 import 'package:fehres/core/strings/localKeys.dart';
 import 'package:fehres/core/theme/colortheme/colors.dart';
 import 'package:fehres/core/utils/extenstions.dart';
+import 'package:fehres/core/widgets/loading_widget.dart';
+import 'package:fehres/features/authors/presentation/view/widgets/auther_item.dart';
+import 'package:fehres/features/home/presentation/cubbit/cubit/home_cubit.dart';
 import 'package:fehres/features/home/presentation/view/widgets/sliderWidgets/slider.button.dart';
 import 'package:fehres/features/home/presentation/view/widgets/sliderWidgets/slider_item.dart';
-import 'package:fehres/features/home/presentation/view/widgets/widgets/auther_item.dart';
 import 'package:fehres/features/home/presentation/view/widgets/widgets/bookrecent_item.dart';
 import 'package:fehres/features/home/presentation/view/widgets/widgets/textbar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -47,100 +50,114 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
-      body: Container(
-        width: double.infinity,
-        child: ListView(
-          padding: EdgeInsets.all(12),
-          children: [
-            CarouselSlider(
-              items: [
-                SliderItem(
-                  index: slideIndex,
-                  img: 'slide1',
-                  title: LocaleKeys.home_slider1title.tr(),
-                  title2: LocaleKeys.home_slidertitle2.tr(),
-                ),
-                SliderItem(
-                  index: slideIndex,
-                  subchild: SliderButton(
-                    title: LocaleKeys.home_slider2button.tr(),
-                  ),
-                  img: 'slide2',
-                  title: LocaleKeys.home_slider2title.tr(),
-                ),
-              ],
-              options: CarouselOptions(
-                enlargeCenterPage: true,
-                enlargeStrategy: CenterPageEnlargeStrategy.zoom,
-                aspectRatio: 16 / 9,
-                viewportFraction: 1,
-                onPageChanged: (value, reason) {
-                  slideIndex = value;
+      body: BlocProvider(
+        create: (context) => HomeCubit(),
+        child: BlocConsumer<HomeCubit, HomeState>(
+          listener: (context, state) {},
+          builder: (context, state) {
+            return MyLoadingwidget(
+              isError: false,
+              isLoading: false,
+              errorchild: Container(),
+              child: Container(
+                width: double.infinity,
+                child: ListView(
+                  padding: EdgeInsets.all(12),
+                  children: [
+                    CarouselSlider(
+                      items: [
+                        SliderItem(
+                          index: slideIndex,
+                          img: 'slide1',
+                          title: LocaleKeys.home_slider1title.tr(),
+                          title2: LocaleKeys.home_slidertitle2.tr(),
+                        ),
+                        SliderItem(
+                          index: slideIndex,
+                          subchild: SliderButton(
+                            title: LocaleKeys.home_slider2button.tr(),
+                          ),
+                          img: 'slide2',
+                          title: LocaleKeys.home_slider2title.tr(),
+                        ),
+                      ],
+                      options: CarouselOptions(
+                        enlargeCenterPage: true,
+                        enlargeStrategy: CenterPageEnlargeStrategy.zoom,
+                        aspectRatio: 16 / 9,
+                        viewportFraction: 1,
+                        onPageChanged: (value, reason) {
+                          slideIndex = value;
 
-                  setState(() {});
-                },
-                autoPlay: true,
-              ),
-            ),
-            15.0.spacev,
-            TextBar(
-              ontap: () => namedRoute(context, RoutesName.addRecentlyScreen),
-            ),
-            12.0.spacev,
-            Container(
-              height: 261,
-              child: ListView.builder(
-                shrinkWrap: true,
-                scrollDirection: Axis.horizontal,
-                itemCount: 8,
-                itemBuilder: (context, index) => Row(
-                  children: [
-                    BookRecentItem(),
-                    15.0.spaceh,
+                          setState(() {});
+                        },
+                        autoPlay: true,
+                      ),
+                    ),
+                    15.0.spacev,
+                    TextBar(
+                      ontap: () =>
+                          namedRoute(context, RoutesName.addRecentlyScreen),
+                    ),
+                    12.0.spacev,
+                    Container(
+                      height: 261,
+                      child: ListView.builder(
+                        shrinkWrap: true,
+                        scrollDirection: Axis.horizontal,
+                        itemCount: 8,
+                        itemBuilder: (context, index) => Row(
+                          children: [
+                            BookRecentItem(),
+                            15.0.spaceh,
+                          ],
+                        ),
+                      ),
+                    ),
+                    TextBar(
+                      title: "الاكثر شهرة",
+                    ),
+                    12.0.spacev,
+                    Container(
+                      height: 261,
+                      child: ListView.builder(
+                        shrinkWrap: true,
+                        scrollDirection: Axis.horizontal,
+                        itemCount: 8,
+                        itemBuilder: (context, index) => Row(
+                          children: [
+                            BookRecentItem(),
+                            15.0.spaceh,
+                          ],
+                        ),
+                      ),
+                    ),
+                    15.0.spacev,
+                    TextBar(
+                      title: "اشهر المؤلفون",
+                      ontap: () => namedRoute(context, RoutesName.authorscreen),
+                    ),
+                    12.0.spacev,
+                    Container(
+                      height: 200,
+                      child: ListView.builder(
+                        shrinkWrap: true,
+                        scrollDirection: Axis.horizontal,
+                        itemCount: 8,
+                        itemBuilder: (context, index) => Row(
+                          children: [
+                            AuthorItem(),
+                            15.0.spaceh,
+                          ],
+                        ),
+                      ),
+                    ),
+                    12.0.spacev
                   ],
                 ),
               ),
-            ),
-            TextBar(
-              title: "الاكثر شهرة",
-            ),
-            12.0.spacev,
-            Container(
-              height: 261,
-              child: ListView.builder(
-                shrinkWrap: true,
-                scrollDirection: Axis.horizontal,
-                itemCount: 8,
-                itemBuilder: (context, index) => Row(
-                  children: [
-                    BookRecentItem(),
-                    15.0.spaceh,
-                  ],
-                ),
-              ),
-            ),
-            15.0.spacev,
-            TextBar(
-              title: "اشهر المؤلفون",
-              ontap: () => namedRoute(context, RoutesName.authorscreen),
-            ),
-            12.0.spacev,
-            Container(
-              height: 200,
-              child: ListView.builder(
-                shrinkWrap: true,
-                scrollDirection: Axis.horizontal,
-                itemCount: 8,
-                itemBuilder: (context, index) => Row(
-                  children: [
-                    AuthorItem(),
-                    15.0.spaceh,
-                  ],
-                ),
-              ),
-            ),
-            12.0.spacev
-          ],
+            );
+          },
         ),
       ),
     );

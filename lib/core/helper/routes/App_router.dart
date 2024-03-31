@@ -1,11 +1,11 @@
 import 'package:fehres/core/helper/navigation_func.dart';
 import 'package:fehres/core/helper/routes/routesname.dart';
-import 'package:fehres/features/home/presentation/view/screens/AddrecentlyScreen.dart';
-import 'package:fehres/features/home/presentation/view/screens/AuthorScreen.dart';
+import 'package:fehres/features/authors/presentation/view/screens/AuthorScreen.dart';
 import 'package:fehres/features/home/presentation/view/screens/homescreen.dart';
 import 'package:fehres/features/home/presentation/view/screens/notify_screen.dart';
 import 'package:fehres/features/home/presentation/view/screens/search_screen.dart';
 import 'package:fehres/features/onboarding/presentation/view/screens/onboardingScreen.dart';
+import 'package:fehres/features/recent_Added/presentation/view/screens/AddrecentlyScreen.dart';
 import 'package:fehres/features/splashscreen/presentation/view/screens/splashScreens.dart';
 import 'package:flutter/material.dart';
 
