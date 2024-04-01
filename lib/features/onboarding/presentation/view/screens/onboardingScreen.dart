@@ -47,7 +47,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   ontap: () {
                     Navigator.pushNamedAndRemoveUntil(
                       context,
-                      RoutesName.homeScreen,
+                      RoutesName.homePagesScreen,
                       (route) => false,
                     );
                   },

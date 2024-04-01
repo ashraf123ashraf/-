@@ -13,6 +13,8 @@ class MyTabbarWidget extends StatelessWidget {
     this.childView1,
     this.childView2,
     this.childView3,
+    this.viewchildren,
+    this.tabschildren,
   });
   final int? length;
   final Widget? child;
@@ -22,6 +24,8 @@ class MyTabbarWidget extends StatelessWidget {
   final Widget? childView1;
   final Widget? childView2;
   final Widget? childView3;
+  final List<Widget>? tabschildren;
+  final List<Widget>? viewchildren;
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -35,33 +39,37 @@ class MyTabbarWidget extends StatelessWidget {
                   child: TabBar(
                     indicatorSize: TabBarIndicatorSize.tab,
                     indicatorColor: Appcolors.main,
-                    tabs: [
-                      MyTexT(
-                        type: Texttype.title,
-                        text: text1 ?? '',
-                        fontsize: 14,
-                      ),
-                      MyTexT(
-                        type: Texttype.title,
-                        text: text2 ?? '',
-                        fontsize: 14,
-                      ),
-                      MyTexT(
-                        type: Texttype.title,
-                        text: text3 ?? '',
-                        fontsize: 14,
-                      )
-                    ],
+                    tabs: length == 3
+                        ? [
+                            MyTexT(
+                              type: Texttype.title,
+                              text: text1 ?? '',
+                              fontsize: 14,
+                            ),
+                            MyTexT(
+                              type: Texttype.title,
+                              text: text2 ?? '',
+                              fontsize: 14,
+                            ),
+                            MyTexT(
+                              type: Texttype.title,
+                              text: text3 ?? '',
+                              fontsize: 14,
+                            )
+                          ]
+                        : tabschildren ?? [],
                   ),
                 ),
                 Expanded(
                   flex: 8,
                   child: TabBarView(
-                    children: [
-                      childView1 ?? Text('111111111'),
-                      childView2 ?? Text('222222222222222'),
-                      childView3 ?? Text('333333333333333333'),
-                    ],
+                    children: length == 3
+                        ? [
+                            childView1 ?? Text('111111111'),
+                            childView2 ?? Text('222222222222222'),
+                            childView3 ?? Text('333333333333333333'),
+                          ]
+                        : viewchildren ?? [],
                   ),
                 ),
               ],

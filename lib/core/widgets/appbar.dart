@@ -7,6 +7,7 @@ AppBar homeAppbar(
     IconData? iconData,
     VoidCallback? onTap,
     bool? isThereAction,
+    Widget? bottom,
     List<Widget>? actions}) {
   return AppBar(
     centerTitle: true,

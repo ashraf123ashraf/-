@@ -9,4 +9,7 @@ class RoutesName {
   static const notifyScreen = 'notifyScreen';
   static const mostpopularScreen = 'mostpopulatScreen';
   static const authorDetailsScreen = "AuthorDetailsScreen";
+  static const homePagesScreen = 'homePagesscreen';
+  static const publisherDetails = 'publisherDetails';
+  static const categoriesDetails = 'categoriesDetails';
 }

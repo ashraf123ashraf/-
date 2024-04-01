@@ -6,7 +6,7 @@ import 'package:fehres/core/strings/localKeys.dart';
 import 'package:fehres/core/theme/colortheme/colors.dart';
 import 'package:fehres/core/utils/extenstions.dart';
 import 'package:fehres/core/widgets/loading_widget.dart';
-import 'package:fehres/features/authors/presentation/view/widgets/auther_item.dart';
+import 'package:fehres/features/authors_publishers/presentation/view/widgets/auther_item.dart';
 import 'package:fehres/features/home/presentation/cubbit/cubit/home_cubit.dart';
 import 'package:fehres/features/home/presentation/view/widgets/sliderWidgets/slider.button.dart';
 import 'package:fehres/features/home/presentation/view/widgets/sliderWidgets/slider_item.dart';
@@ -139,7 +139,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     12.0.spacev,
                     Container(
-                      height: 200,
+                      height: 150,
                       child: ListView.builder(
                         shrinkWrap: true,
                         scrollDirection: Axis.horizontal,
