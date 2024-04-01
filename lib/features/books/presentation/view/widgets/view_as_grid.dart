@@ -38,7 +38,7 @@ class ViewAsgrid extends StatelessWidget {
           name: name,
           bookName: bookname,
           img: img,
-          ontap: ontap,
+          onimagTab: ontap,
         );
       },
     );

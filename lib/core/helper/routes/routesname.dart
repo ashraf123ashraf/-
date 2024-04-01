@@ -12,4 +12,5 @@ class RoutesName {
   static const homePagesScreen = 'homePagesscreen';
   static const publisherDetails = 'publisherDetails';
   static const categoriesDetails = 'categoriesDetails';
+  static const bookDetailsScreen = 'bookDetailsScreen';
 }

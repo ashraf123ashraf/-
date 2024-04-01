@@ -1,11 +1,14 @@
+import 'package:fehres/core/helper/navigation_func.dart';
+import 'package:fehres/core/helper/routes/routesname.dart';
 import 'package:fehres/features/books/presentation/view/widgets/view_as_grid.dart';
 import 'package:fehres/features/books/presentation/view/widgets/view_as_list.dart';
 import 'package:fehres/features/home/presentation/view/widgets/widgets/ShuffleWidget.dart';
 import 'package:flutter/cupertino.dart';
 
 class BodyBoo extends StatefulWidget {
-  const BodyBoo({super.key});
-
+  const BodyBoo({super.key, this.onlistTab, this.onGridTab});
+  final VoidCallback? onlistTab;
+  final VoidCallback? onGridTab;
   @override
   State<BodyBoo> createState() => _BodyBooState();
 }
@@ -47,7 +50,13 @@ class _BodyBooState extends State<BodyBoo> {
                         child: child,
                       );
                     },
-                    child: ViewASList(),
+                    child: ViewASList(
+                      onImgTab: widget.onlistTab ??
+                          () => namedRoute(
+                                context,
+                                RoutesName.bookDetailsScreen,
+                              ),
+                    ),
                   )
                 : AnimatedSwitcher(
                     duration: Duration(milliseconds: 700),
@@ -59,7 +68,13 @@ class _BodyBooState extends State<BodyBoo> {
                         child: child,
                       );
                     },
-                    child: ViewAsgrid(),
+                    child: ViewAsgrid(
+                      ontap: widget.onGridTab ??
+                          () => namedRoute(
+                                context,
+                                RoutesName.bookDetailsScreen,
+                              ),
+                    ),
                   ),
           ),
         ),

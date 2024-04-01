@@ -4,6 +4,7 @@ import 'package:fehres/features/authors_publishers/presentation/view/screens/Aut
 import 'package:fehres/features/authors_publishers/presentation/view/screens/author_detailsScreen.dart';
 import 'package:fehres/features/authors_publishers/presentation/view/screens/publisher_details.dart';
 import 'package:fehres/features/books/presentation/view/screens/AddrecentlyScreen.dart';
+import 'package:fehres/features/books/presentation/view/screens/booh_detaisl.dart';
 import 'package:fehres/features/books/presentation/view/screens/category_details.dart';
 import 'package:fehres/features/home/presentation/view/screens/homescreen.dart';
 import 'package:fehres/features/home/presentation/view/screens/notify_screen.dart';
@@ -67,6 +68,11 @@ class AppRoute {
         return materialpage(
           CategoreyDetailsScreen(),
           direction: AxisDirection.right,
+        );
+      case RoutesName.bookDetailsScreen:
+        return materialpage(
+          BookDetailsScreen(),
+          direction: AxisDirection.down,
         );
     }
 

@@ -2,20 +2,23 @@ import 'package:fehres/features/books/presentation/view/widgets/listview_item.da
 import 'package:flutter/material.dart';
 
 class ViewASList extends StatelessWidget {
-  const ViewASList(
-      {super.key,
-      this.booknamr,
-      this.img,
-      this.name,
-      this.ontap,
-      this.ratival,
-      this.text});
+  const ViewASList({
+    super.key,
+    this.booknamr,
+    this.img,
+    this.name,
+    this.ontap,
+    this.ratival,
+    this.text,
+    this.onImgTab,
+  });
   final VoidCallback? ontap;
   final String? name;
   final String? booknamr;
   final double? ratival;
   final String? img;
   final String? text;
+  final VoidCallback? onImgTab;
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
@@ -27,6 +30,7 @@ class ViewASList extends StatelessWidget {
           bookname: booknamr,
           ratioval: ratival,
           text: text,
+          onimgTab: onImgTab,
         );
       },
     );

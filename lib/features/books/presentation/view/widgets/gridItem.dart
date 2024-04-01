@@ -14,6 +14,7 @@ class ItemGrid extends StatelessWidget {
     this.bookName,
     this.name,
     this.ontap,
+    this.onimagTab,
     super.key,
   });
 
@@ -22,7 +23,7 @@ class ItemGrid extends StatelessWidget {
   final String? img;
 
   final String? bookName;
-
+  final VoidCallback? onimagTab;
   final String? name;
   final VoidCallback? ontap;
 
@@ -45,20 +46,23 @@ class ItemGrid extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            width: 163,
-            height: 180,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(
-                8,
-              ),
-              image: DecorationImage(
-                fit: BoxFit.cover,
-                image: img == null
-                    ? AssetImage(
-                        'book'.imagepath,
-                      )
-                    : AssetImage(''),
+          GestureDetector(
+            onTap: onimagTab,
+            child: Container(
+              width: 163,
+              height: 180,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(
+                  8,
+                ),
+                image: DecorationImage(
+                  fit: BoxFit.cover,
+                  image: img == null
+                      ? AssetImage(
+                          'book'.imagepath,
+                        )
+                      : AssetImage(''),
+                ),
               ),
             ),
           ),

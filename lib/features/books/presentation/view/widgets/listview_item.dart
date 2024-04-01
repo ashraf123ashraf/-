@@ -6,18 +6,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class ListItem extends StatelessWidget {
-  const ListItem(
-      {super.key,
-      this.authorName,
-      this.bookname,
-      this.img,
-      this.ratioval,
-      this.text});
+  const ListItem({
+    super.key,
+    this.authorName,
+    this.bookname,
+    this.img,
+    this.ratioval,
+    this.text,
+    this.onimgTab,
+  });
   final String? img;
   final String? bookname;
   final String? authorName;
   final double? ratioval;
   final String? text;
+  final VoidCallback? onimgTab;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -36,7 +39,8 @@ class ListItem extends StatelessWidget {
               Expanded(
                 flex: 4,
                 child: img == null
-                    ? Image.asset('book'.imagepath)
+                    ? GestureDetector(
+                        onTap: onimgTab, child: Image.asset('book'.imagepath))
                     : Image.asset(''),
               ),
               8.0.spaceh,

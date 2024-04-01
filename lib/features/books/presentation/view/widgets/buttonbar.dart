@@ -2,14 +2,15 @@ import 'package:fehres/core/theme/colortheme/colors.dart';
 import 'package:fehres/core/widgets/my_customtext.dart';
 import 'package:flutter/material.dart';
 
-class ButtonBar extends StatelessWidget {
-  const ButtonBar({super.key, this.text, this.isActive});
+class ButtonBaritem extends StatelessWidget {
+  const ButtonBaritem({super.key, this.text, this.isActive, this.ontab});
   final String? text;
   final bool? isActive;
+  final VoidCallback? ontab;
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      onPressed: () {},
+      onPressed: ontab,
       child: MyTexT(text: text ?? 'روايات'),
       style: ButtonStyle(
         backgroundColor: MaterialStatePropertyAll(
