@@ -14,14 +14,14 @@ class ButtonBaritem extends StatelessWidget {
       child: MyTexT(text: text ?? 'روايات'),
       style: ButtonStyle(
         backgroundColor: MaterialStatePropertyAll(
-          isActive! ? Appcolors.main : Appcolors.white,
+          isActive ?? false ? Appcolors.main : Appcolors.white,
         ),
         shape: MaterialStatePropertyAll(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(6),
             side: BorderSide(
-                color: isActive! ? Appcolors.main : Appcolors.border,
-                width: isActive! ? 0 : 1),
+                color: isActive ?? false ? Appcolors.main : Appcolors.border,
+                width: isActive ?? false ? 0 : 1),
           ),
         ),
         padding: MaterialStatePropertyAll(
