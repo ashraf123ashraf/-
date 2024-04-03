@@ -1,4 +1,4 @@
-import 'package:fehres/features/authors_publishers/presentation/view/widgets/item_book_rate.dart';
+import 'package:fehres/core/widgets/item_book_rate.dart';
 import 'package:flutter/material.dart';
 
 class SecondTab extends StatelessWidget {

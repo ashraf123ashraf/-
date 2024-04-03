@@ -7,8 +7,8 @@ import 'package:fehres/core/widgets/rating_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class ItemGrid extends StatelessWidget {
-  const ItemGrid({
+class BookItemGrid extends StatelessWidget {
+  const BookItemGrid({
     this.ratingVal,
     this.img,
     this.bookName,

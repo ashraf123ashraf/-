@@ -2,8 +2,11 @@ import 'package:fehres/core/theme/colortheme/colors.dart';
 import 'package:fehres/core/utils/extenstions.dart';
 import 'package:fehres/features/categories/presentation/view/screens/Categories_screen.dart';
 import 'package:fehres/features/home/presentation/view/screens/homescreen.dart';
+import 'package:fehres/features/library/presentation/cubbit/cubit/library_cubit.dart';
+import 'package:fehres/features/library/presentation/view/screens/librariyScreen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 
 class HomePagesScreen extends StatefulWidget {
@@ -39,7 +42,10 @@ class _HomePagesScreenState extends State<HomePagesScreen> {
           HomeScreen(),
           CategoriesScreen(),
           Container(),
-          Container(),
+          BlocProvider(
+            create: (context) => LibraryCubit(),
+            child: LibraryScreen(),
+          ),
           Container(),
         ],
       ),
@@ -74,7 +80,12 @@ class _HomePagesScreenState extends State<HomePagesScreen> {
             label: "عربة التسوق",
           ),
           BottomNavigationBarItem(
-            icon: SvgPicture.asset('libra'.svgPath),
+            activeIcon: SvgPicture.asset(
+              'active_librar'.svgPath,
+            ),
+            icon: SvgPicture.asset(
+              'libra'.svgPath,
+            ),
             label: "مكتبتي",
           ),
           BottomNavigationBarItem(

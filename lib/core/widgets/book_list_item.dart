@@ -5,8 +5,8 @@ import 'package:fehres/core/widgets/rating_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-class ListItem extends StatelessWidget {
-  const ListItem({
+class BookListItem extends StatelessWidget {
+  const BookListItem({
     super.key,
     this.authorName,
     this.bookname,

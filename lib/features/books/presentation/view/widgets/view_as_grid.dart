@@ -1,4 +1,4 @@
-import 'package:fehres/features/books/presentation/view/widgets/gridItem.dart';
+import 'package:fehres/core/widgets/book_grid_item.dart';
 import 'package:flutter/material.dart';
 
 class ViewAsgrid extends StatelessWidget {
@@ -33,7 +33,7 @@ class ViewAsgrid extends StatelessWidget {
         crossAxisSpacing: 8,
       ),
       itemBuilder: (context, index) {
-        return ItemGrid(
+        return BookItemGrid(
           ratingVal: ratival,
           name: name,
           bookName: bookname,

@@ -1,5 +1,3 @@
-import 'package:fehres/core/helper/navigation_func.dart';
-import 'package:fehres/core/helper/routes/routesname.dart';
 import 'package:fehres/core/theme/colortheme/colors.dart';
 import 'package:fehres/core/utils/extenstions.dart';
 import 'package:fehres/core/widgets/my_customtext.dart';
@@ -15,18 +13,21 @@ Widget mYsliverAppbar(
   double? ratVal,
 }) {
   return SliverAppBar(
+    surfaceTintColor: Appcolors.white,
+    foregroundColor: Appcolors.white,
     centerTitle: true,
-    leading: Icon(
-      Icons.arrow_back_ios,
+    leading: IconButton(
+      onPressed: () => Navigator.pop(context),
+      icon: Icon(
+        Icons.arrow_back_ios,
+        color: Appcolors.Black,
+      ),
     ),
     actions: [
       IconButton(
-        onPressed: () => namedRoute(
-          context,
-          RoutesName.searchScreen,
-        ),
+        onPressed: () {},
         icon: SvgPicture.asset(
-          'search'.svgPath,
+          'share'.svgPath,
         ),
       ),
     ],

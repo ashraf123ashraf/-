@@ -1,4 +1,4 @@
-import 'package:fehres/features/authors_publishers/presentation/view/widgets/bookItem.dart';
+import 'package:fehres/core/widgets/bookItem.dart';
 import 'package:flutter/material.dart';
 
 class FirstTab extends StatelessWidget {

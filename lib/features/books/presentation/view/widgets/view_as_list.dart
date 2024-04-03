@@ -1,4 +1,4 @@
-import 'package:fehres/features/books/presentation/view/widgets/listview_item.dart';
+import 'package:fehres/core/widgets/book_list_item.dart';
 import 'package:flutter/material.dart';
 
 class ViewASList extends StatelessWidget {
@@ -24,7 +24,7 @@ class ViewASList extends StatelessWidget {
     return ListView.builder(
       itemCount: 11,
       itemBuilder: (context, index) {
-        return ListItem(
+        return BookListItem(
           authorName: name,
           img: img,
           bookname: booknamr,
