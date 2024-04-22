@@ -1,8 +1,10 @@
+import 'package:fehres/core/theme/colortheme/colors.dart';
 import 'package:fehres/core/utils/extenstions.dart';
 import 'package:fehres/core/widgets/appbar.dart';
 import 'package:fehres/core/widgets/loading_widget.dart';
 import 'package:fehres/core/widgets/my_BUTTON_bar.dart';
 import 'package:fehres/features/library/presentation/cubbit/cubit/library_cubit.dart';
+import 'package:fehres/features/library/presentation/view/widgets/bookLib_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -30,9 +32,6 @@ class _LibraryScreenState extends State<LibraryScreen> {
           return Scaffold(
             appBar: homeAppbar(
               text: 'مكتبتي',
-              iconData: Icons.arrow_back_ios,
-              onTap: () =>
-                  Navigator.canPop(context) ? Navigator.pop(context) : null,
             ),
             body: MyLoadingwidget(
               errorchild: Container(),
@@ -42,6 +41,8 @@ class _LibraryScreenState extends State<LibraryScreen> {
                 child: Column(
                   children: [
                     MyButtonBarWidget(
+                      isbalck: true,
+                      textcolor: Appcolors.Black,
                       ontabes: [
                         () => cubbitt.favouriteRead,
                         () => cubbitt.haveRead,
@@ -49,7 +50,7 @@ class _LibraryScreenState extends State<LibraryScreen> {
                         () => cubbitt.intentedToread
                       ],
                       states: <bool>[
-                        state is FavouriteLoaded,
+                        true,
                         state is HaveRead,
                         state is StillRead,
                         state is IntendedToRead
@@ -60,7 +61,16 @@ class _LibraryScreenState extends State<LibraryScreen> {
                         "اقراءه حاليا",
                         "أنوي قراءته"
                       ],
-                    )
+                    ),
+                    28.0.spacev,
+                    Expanded(
+                      child: ListView.builder(
+                        itemCount: 2,
+                        itemBuilder: (context, index) {
+                          return BoolLibItem();
+                        },
+                      ),
+                    ),
                   ],
                 ),
               ),

@@ -14,7 +14,7 @@ class MyRating extends StatelessWidget {
       direction: Axis.horizontal,
       itemCount: 5,
       itemBuilder: (context, _) => Icon(
-        Icons.star,
+        Icons.star_border,
         color: Appcolors.main,
       ),
     );

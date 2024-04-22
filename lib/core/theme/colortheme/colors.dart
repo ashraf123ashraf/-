@@ -11,6 +11,7 @@ class Appcolors {
   static Color border = Color(0xffE7E7E7);
   static Color Black = Color(0xff2A2A2A);
   static Color grey = Color(0xff888888);
+  static Color shadow = Color(0xff404040).withOpacity(.05);
 
   static LinearGradient circularProgress = LinearGradient(
     colors: [

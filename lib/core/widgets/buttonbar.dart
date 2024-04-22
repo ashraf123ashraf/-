@@ -9,18 +9,31 @@ class ButtonBaritem extends StatelessWidget {
     this.isActive,
     this.ontab,
     this.state,
+    this.color,
+    this.textcolor,
+    this.isBlack,
   });
   final String? text;
   final bool? isActive;
   final VoidCallback? ontab;
   final state;
+  final Color? color;
+  final Color? textcolor;
+  final bool? isBlack;
+
   @override
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: ontab,
       child: MyTexT(
         text: text ?? 'روايات',
-        color: isActive ?? true ? Appcolors.white : Appcolors.main,
+        color: textcolor != null
+            ? textcolor
+            : isActive ?? true
+                ? Appcolors.white
+                : isBlack ?? false
+                    ? Appcolors.Black
+                    : Appcolors.main,
       ),
       style: ButtonStyle(
         backgroundColor: MaterialStatePropertyAll(
@@ -30,7 +43,11 @@ class ButtonBaritem extends StatelessWidget {
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(6),
             side: BorderSide(
-                color: isActive ?? false ? Appcolors.main : Appcolors.border,
+                color: color != null
+                    ? color!
+                    : isActive ?? false
+                        ? Appcolors.main
+                        : Appcolors.border,
                 width: isActive ?? false ? 0 : 1),
           ),
         ),
