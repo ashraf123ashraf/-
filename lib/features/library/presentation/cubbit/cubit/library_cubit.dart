@@ -6,20 +6,20 @@ part 'library_state.dart';
 class LibraryCubit extends Cubit<LibraryState> {
   LibraryCubit() : super(LibraryInitial());
   LibraryCubit get(context) => BlocProvider.of(context);
-  haveRead() {
-    // emit(Loading());
+  void haveRead() {
+    emit(Loading());
     emit(HaveRead());
   }
 
-  stillRead() {
+  void stillRead() {
     emit(StillRead());
   }
 
-  intentedToread() {
+  void intentedToread() {
     emit(IntendedToRead());
   }
 
-  favouriteRead() {
+  void favouriteRead() {
     emit(FavouriteLoaded());
   }
 }

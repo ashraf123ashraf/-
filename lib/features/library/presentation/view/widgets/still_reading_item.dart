@@ -2,19 +2,22 @@ import 'package:fehres/core/theme/colortheme/colors.dart';
 import 'package:fehres/core/utils/extenstions.dart';
 import 'package:fehres/core/widgets/my_customtext.dart';
 import 'package:fehres/core/widgets/rating_widget.dart';
+import 'package:fehres/features/library/presentation/view/widgets/indicate_progress.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
 
-class BoolLibItem extends StatelessWidget {
-  const BoolLibItem({
+class StillReadingItem extends StatelessWidget {
+  const StillReadingItem({
     super.key,
     this.authorName,
     this.bookname,
     this.img,
     this.onimgTab,
-    this.ratioval,
     this.optionsTab,
+    this.ratioval,
   });
+
   final String? img;
   final VoidCallback? onimgTab;
   final String? bookname;
@@ -27,7 +30,7 @@ class BoolLibItem extends StatelessWidget {
       children: [
         Container(
           width: 343,
-          height: 105,
+          height: 152,
           decoration: BoxDecoration(
             boxShadow: [
               BoxShadow(
@@ -56,20 +59,21 @@ class BoolLibItem extends StatelessWidget {
                               child: Container(
                                 decoration: BoxDecoration(
                                   image: DecorationImage(
-                                    fit: BoxFit.contain,
+                                    fit: BoxFit.cover,
                                     image: AssetImage(
-                                      'book'.imagepath,
+                                      'similar'.imagepath,
                                     ),
                                   ),
                                 ),
-                                height: 105,
+                                height: 152,
                                 width: 101,
                                 // child: Image.asset(
                                 //   width: 101,
                                 //   height: 148,
 
                                 // ),
-                              ))
+                              ),
+                            )
                           : Image.asset(''),
                       12.0.spaceh,
                       Column(
@@ -123,6 +127,7 @@ class BoolLibItem extends StatelessWidget {
                             ],
                           ),
                           8.0.spacev,
+                          ProgressIndicate(),
                         ],
                       ),
                     ],
