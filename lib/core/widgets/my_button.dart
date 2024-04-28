@@ -4,11 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class MyButton extends StatelessWidget {
-  const MyButton({super.key, required this.title});
+  const MyButton({super.key, required this.title, this.ontap});
   final String title;
+  final VoidCallback? ontap;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      onTap: ontap,
       child: Container(
         height: 44,
         decoration: BoxDecoration(

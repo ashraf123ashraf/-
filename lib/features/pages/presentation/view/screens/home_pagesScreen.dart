@@ -4,6 +4,7 @@ import 'package:fehres/features/categories/presentation/view/screens/Categories_
 import 'package:fehres/features/home/presentation/view/screens/homescreen.dart';
 import 'package:fehres/features/library/presentation/cubbit/cubit/library_cubit.dart';
 import 'package:fehres/features/library/presentation/view/screens/librariyScreen.dart';
+import 'package:fehres/features/profile/presentation/view/screens/profile_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -46,7 +47,7 @@ class _HomePagesScreenState extends State<HomePagesScreen> {
             create: (context) => LibraryCubit(),
             child: LibraryScreen(),
           ),
-          Container(),
+          ProfileScreen(),
         ],
       ),
       bottomNavigationBar: CupertinoTabBar(
@@ -61,7 +62,7 @@ class _HomePagesScreenState extends State<HomePagesScreen> {
         backgroundColor: Appcolors.white,
         border: Border(top: BorderSide(width: 1, color: Appcolors.border)),
         currentIndex: pageIndex,
-        height: 72,
+        height: 62,
         activeColor: Appcolors.main,
         // indicatorShape: RoundedRectangleBorder(borderRadius: BorderRadius.zero),
         items: [
@@ -89,6 +90,9 @@ class _HomePagesScreenState extends State<HomePagesScreen> {
             label: "مكتبتي",
           ),
           BottomNavigationBarItem(
+            activeIcon: SvgPicture.asset(
+              'user-profile-active'.svgPath,
+            ),
             icon: SvgPicture.asset('profile'.svgPath),
             label: "حسابي",
           ),

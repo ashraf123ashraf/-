@@ -14,6 +14,5 @@ class HaveReadBody extends StatelessWidget {
         },
       ),
     );
-    ;
   }
 }
