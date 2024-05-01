@@ -13,4 +13,12 @@ class RoutesName {
   static const publisherDetails = 'publisherDetails';
   static const categoriesDetails = 'categoriesDetails';
   static const bookDetailsScreen = 'bookDetailsScreen';
+  static const profilehelpscreen = 'profilehelpscreen';
+  static const profileconditionscreen = 'profileconditionscreen';
+  static const profileprivatesscreen = 'profileprivatesscreen';
+  static const joinusscreen = 'joinusscreen';
+  static const publisherpolicyscreen = 'publisherpolicyscreen';
+  static const loginscreen = 'loginscreen';
+  static const forgetscreen = 'forgetscreen';
+  static const signupscreen = 'signupscreen';
 }

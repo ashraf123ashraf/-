@@ -2,7 +2,7 @@ import 'package:fehres/core/theme/colortheme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-enum Texttype { title, text, normal, err }
+enum Texttype { title, text, normal, err, underlined }
 
 class MyTexT extends StatelessWidget {
   TextStyle? gettextstyle(Texttype? type) {
@@ -29,6 +29,14 @@ class MyTexT extends StatelessWidget {
           fontWeight: FontWeight.w400,
         ).copyWith(
           color: color ?? Appcolors.grey,
+          fontSize: fontsize ?? 12,
+        );
+      case Texttype.underlined:
+        return TextStyle(
+          decoration: TextDecoration.underline,
+          fontWeight: FontWeight.w400,
+        ).copyWith(
+          color: color ?? Appcolors.Black,
           fontSize: fontsize ?? 12,
         );
       default:

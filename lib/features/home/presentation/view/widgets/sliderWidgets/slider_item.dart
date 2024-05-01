@@ -7,13 +7,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class SliderItem extends StatelessWidget {
-  const SliderItem(
-      {super.key,
-      this.index,
-      required this.title,
-      this.title2,
-      this.subchild,
-      required this.img});
+  const SliderItem({
+    super.key,
+    this.index,
+    required this.title,
+    this.title2,
+    this.subchild,
+    required this.img,
+  });
 
   final int? index;
   final String title;

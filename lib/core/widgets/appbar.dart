@@ -23,6 +23,7 @@ AppBar homeAppbar(
           Icon(
             color: Appcolors.Black,
             iconData,
+            size: 20,
           ),
       onPressed: onTap,
     ),

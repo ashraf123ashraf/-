@@ -12,6 +12,7 @@ class Appcolors {
   static Color Black = Color(0xff2A2A2A);
   static Color grey = Color(0xff888888);
   static Color shadow = Color(0xff404040).withOpacity(.05);
+  static Color tbbarshabow = Color(0xffcccccc);
   static Color lightGrey = Color(0xffD9D9D9);
 
   static LinearGradient circularProgress = LinearGradient(

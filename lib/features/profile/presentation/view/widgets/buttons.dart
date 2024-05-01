@@ -16,13 +16,17 @@ class ProfileButtons extends StatelessWidget {
         Container(
           width: 160,
           height: 44,
-          child: MyButton(title: 'انشاء حساب جديد'),
+          child: MyButton(
+            ontap: signUp,
+            title: 'انشاء حساب جديد',
+          ),
         ),
         7.0.spaceh,
         Container(
           width: 160,
           height: 44,
           child: SecondButton(
+            ontap: signin,
             title: "تسجيل الدخول",
             fontcolor: Appcolors.main,
             backcolor: Appcolors.white,

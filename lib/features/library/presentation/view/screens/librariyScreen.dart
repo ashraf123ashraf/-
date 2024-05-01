@@ -21,67 +21,59 @@ class LibraryScreen extends StatefulWidget {
 class _LibraryScreenState extends State<LibraryScreen> {
   @override
   void initState() {
-    BlocProvider.of<LibraryCubit>(context).haveRead();
+    BlocProvider.of<LibraryCubit>(context).favouriteRead();
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => LibraryCubit(),
-      child: BlocBuilder<LibraryCubit, LibraryState>(
-        builder: (context, state) {
-          LibraryCubit cubbitt = BlocProvider.of<LibraryCubit>(context);
-          return Scaffold(
-            appBar: homeAppbar(
-              text: 'مكتبتي',
-            ),
-            body: MyLoadingwidget(
-              errorchild: Container(),
-              isError: false,
-              isLoading: state is Loading ? true : false,
-              child: Container(
-                child: Column(
-                  children: [
-                    MyButtonBarWidget(
-                      isbalck: true,
-                      textcolor: Appcolors.Black,
-                      ontabes: [
-                        cubbitt.favouriteRead,
-                        cubbitt.haveRead,
-                        cubbitt.stillRead,
-                        cubbitt.intentedToread
-                      ],
-                      states: <bool>[
-                        state is FavouriteLoaded,
-                        state is HaveRead,
-                        state is StillRead,
-                        state is IntendedToRead
-                      ],
-                      data: [
-                        'كتب مفضلة',
-                        "قرأته",
-                        "اقراءه حاليا",
-                        "أنوي قراءته"
-                      ],
-                    ),
-                    28.0.spacev,
-                    state is FavouriteLoaded
-                        ? FavoriteBody()
-                        : state is HaveRead
-                            ? HaveReadBody()
-                            : state is IntendedToRead
-                                ? IntentedBody()
-                                : state is StillRead
-                                    ? StillBody()
-                                    : Container(),
-                  ],
-                ),
+    return BlocBuilder<LibraryCubit, LibraryState>(
+      builder: (context, state) {
+        LibraryCubit cubbitt = BlocProvider.of<LibraryCubit>(context);
+        return Scaffold(
+          appBar: homeAppbar(
+            text: 'مكتبتي',
+          ),
+          body: MyLoadingwidget(
+            errorchild: Container(),
+            isError: false,
+            isLoading: state is Loading ? true : false,
+            child: Container(
+              child: Column(
+                children: [
+                  MyButtonBarWidget(
+                    isbalck: true,
+                    textcolor: Appcolors.Black,
+                    ontabes: [
+                      cubbitt.favouriteRead,
+                      cubbitt.haveRead,
+                      cubbitt.stillRead,
+                      cubbitt.intentedToread
+                    ],
+                    states: <bool>[
+                      state is FavouriteLoaded,
+                      state is HaveRead,
+                      state is StillRead,
+                      state is IntendedToRead
+                    ],
+                    data: ['كتب مفضلة', "قرأته", "اقراءه حاليا", "أنوي قراءته"],
+                  ),
+                  28.0.spacev,
+                  state is FavouriteLoaded
+                      ? FavoriteBody()
+                      : state is HaveRead
+                          ? HaveReadBody()
+                          : state is IntendedToRead
+                              ? IntentedBody()
+                              : state is StillRead
+                                  ? StillBody()
+                                  : Container(),
+                ],
               ),
             ),
-          ).padh(12);
-        },
-      ),
+          ),
+        ).padh(12);
+      },
     );
   }
 }

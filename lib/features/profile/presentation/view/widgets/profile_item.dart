@@ -1,3 +1,5 @@
+import 'package:fehres/core/helper/navigation_func.dart';
+import 'package:fehres/core/helper/routes/routesname.dart';
 import 'package:fehres/core/theme/colortheme/colors.dart';
 import 'package:fehres/core/utils/extenstions.dart';
 import 'package:fehres/core/widgets/my_customtext.dart';
@@ -15,7 +17,15 @@ class ProfileItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        if (title == 'مساعدة') {
+          namedRoute(context, RoutesName.profilehelpscreen);
+        } else if (title == 'شروط الاستخدام') {
+          namedRoute(context, RoutesName.profileconditionscreen);
+        } else if (title == 'سياسة الخصوصية') {
+          namedRoute(context, RoutesName.profileprivatesscreen);
+        }
+      },
       child: Container(
         color: Appcolors.white,
         child: Column(

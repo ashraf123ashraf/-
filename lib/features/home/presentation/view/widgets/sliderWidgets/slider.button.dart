@@ -14,7 +14,7 @@ class SliderButton extends StatelessWidget {
       child: MyTexT(
         text: title,
         color: Appcolors.main,
-      ).padh(14).padv(9),
+      ).padh(14).padv(6),
       style: ButtonStyle(
         backgroundColor: MaterialStatePropertyAll(
           Appcolors.white,

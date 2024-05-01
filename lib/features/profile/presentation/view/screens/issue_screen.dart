@@ -20,8 +20,11 @@ class IsuueScreen extends StatelessWidget {
             icon: SvgPicture.asset('issue_profile'.svgPath),
           ),
         ],
-        icon: SvgPicture.asset(
-          'cancel'.svgPath,
+        icon: GestureDetector(
+          onTap: () => Navigator.pop(context),
+          child: SvgPicture.asset(
+            'cancel'.svgPath,
+          ),
         ),
       ),
       body: Container(
@@ -52,7 +55,7 @@ class IsuueScreen extends StatelessWidget {
                   MyTextFormField(
                     bordercolor: Appcolors.border,
                     hint: "وصف المشكلة......",
-                    maxlines: 20,
+                    maxlines: 22,
                   ),
                   12.0.spacev,
                 ],

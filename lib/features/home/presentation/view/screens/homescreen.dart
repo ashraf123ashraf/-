@@ -75,6 +75,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         SliderItem(
                           index: slideIndex,
                           subchild: SliderButton(
+                            onpress: () => namedRoute(
+                              context,
+                              RoutesName.joinusscreen,
+                            ),
                             title: LocaleKeys.home_slider2button.tr(),
                           ),
                           img: 'slide2',

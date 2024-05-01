@@ -18,77 +18,70 @@ class SearchScreen extends StatefulWidget {
 class _SearchScreenState extends State<SearchScreen> {
   String searchVal = '';
   Widget buildSearchresult() {
-    return Container(
-      child: DefaultTabController(
-        length: 3,
+    return DefaultTabController(
+      length: 3,
+      child: Expanded(
         child: Column(
           children: [
-            Container(
-              height: 56,
-              decoration: BoxDecoration(
-                border: Border.all(
-                  width: 1,
-                  color: Appcolors.ofWhite,
-                ),
-                color: Appcolors.white,
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  TabBar(
-                    // indicatorSize: TabBarIndicatorSize.label,
-                    // indicatorWeight: 3,
-                    // indicator: BoxDecoration(
-                    //   border: Border(
-                    //     bottom: BorderSide(
-                    //       width: 3,
-                    //       color: Appcolors.main,
-                    //     ),
-                    //   ),
-                    // ),
-                    // labelPadding: EdgeInsets.only(
-                    //   bottom: 2,
-                    // ),
-                    padding: EdgeInsets.only(
-                      top: 15,
+            Expanded(
+              flex: 1,
+              child: Container(
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: Appcolors.tbbarshabow.withOpacity(.09),
+                      blurRadius: 10,
+                      spreadRadius: 0,
+                      offset: Offset(0, 4),
                     ),
-                    dividerHeight: 0,
-                    indicatorColor: Appcolors.main,
-                    tabs: [
-                      MyTexT(
-                        fontsize: 14,
-                        text: 'كتب وروايات',
-                        type: Texttype.title,
-                      ),
-                      MyTexT(
-                        fontsize: 14,
-                        text: 'مؤلفون',
-                        type: Texttype.title,
-                      ),
-                      MyTexT(
-                        fontsize: 14,
-                        text: 'دور النشر',
-                        type: Texttype.title,
-                      ),
-                    ],
+                  ],
+                  border: Border(
+                    bottom: BorderSide(
+                      width: 1,
+                      color: Appcolors.ofWhite,
+                    ),
                   ),
-                  16.0.spacev,
-                  Expanded(
-                    child: TabBarView(
-                      children: [
-                        ListView.builder(
-                          itemCount: 20,
-                          itemBuilder: (context, index) =>
-                              Text('content of tab 1'),
-                        ),
-                        Center(
-                          child: Text('Content of Tab 2'),
-                        ),
-                        Center(
-                          child: Text('Content of Tab 3'),
-                        ),
-                      ],
+                  color: Appcolors.white,
+                ),
+                child: TabBar(
+                  dividerColor: Appcolors.border,
+                  dividerHeight: 1,
+                  indicatorSize: TabBarIndicatorSize.tab,
+                  indicatorColor: Appcolors.main,
+                  labelPadding: EdgeInsets.only(bottom: 18),
+                  tabs: [
+                    MyTexT(
+                      fontsize: 14,
+                      text: 'كتب وروايات',
+                      type: Texttype.title,
                     ),
+                    MyTexT(
+                      fontsize: 14,
+                      text: 'مؤلفون',
+                      type: Texttype.title,
+                    ),
+                    MyTexT(
+                      fontsize: 14,
+                      text: 'دور النشر',
+                      type: Texttype.title,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            17.0.spacev,
+            Expanded(
+              flex: 14,
+              child: TabBarView(
+                children: [
+                  Center(
+                    child: Text('Content of Tab 1'),
+                  ),
+                  Center(
+                    child: Text('Content of Tab 2'),
+                  ),
+                  Center(
+                    child: Text('Content of Tab 3'),
                   ),
                 ],
               ),
@@ -140,6 +133,7 @@ class _SearchScreenState extends State<SearchScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Appcolors.white,
       appBar: homeAppbar(
         onTap: () => Navigator.pop(context),
         iconData: Icons.arrow_back_ios,

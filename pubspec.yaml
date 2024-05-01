@@ -40,6 +40,11 @@ dependencies:
   lottie: ^3.1.0
   flutter_rating_bar: ^4.0.1
   flutter_tts: ^4.0.2
+  drop_down_search_field: ^1.0.4
+  file_picker: ^8.0.3
+  permission_handler:
+
+  
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
